@@ -11,6 +11,9 @@ repositories {
 		name = 'ParchmentMC'
 		url = 'https://maven.parchmentmc.org'
 	}
+	maven {
+		url = 'https://jitpack.io'
+	}
 }
 
 dependencies {
@@ -20,6 +23,11 @@ dependencies {
 		parchment("org.parchmentmc.data:parchment-${project.parchment_version}@zip")
 	}
 
+	// Scribe
+	modApi "com.github.Team-Abode:scribe:${rootProject.scribe_version}"
+	include "com.github.Team-Abode:scribe:${rootProject.scribe_version}"
+
+	// Fabric
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 }
